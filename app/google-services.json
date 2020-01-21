@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "350019571662",
+    "firebase_url": "https://best-quotes-19288.firebaseio.com",
+    "project_id": "best-quotes-19288",
+    "storage_bucket": "best-quotes-19288.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:350019571662:android:14c80e07475ca4b41ea59f",
+        "android_client_info": {
+          "package_name": "app.bestquotes.af"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "350019571662-9kkea8l345d76qqotnnn05b37q80hv8j.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAANKkLeXV0HUKpaVtaMmrH7aOPWflG78M"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "350019571662-9kkea8l345d76qqotnnn05b37q80hv8j.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
