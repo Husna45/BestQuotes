@@ -58,7 +58,7 @@ public class SignUpActivity extends AppCompatActivity {
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()){
 
-                            Intent intent=new Intent(LoginActivity.this,MainActivity.class);
+                            Intent intent=new Intent(SignUpActivity.this,MainActivity.class);
                             startActivity(intent);
                             finish();
 
@@ -67,7 +67,7 @@ public class SignUpActivity extends AppCompatActivity {
                         else {
 
 
-                            Toast.makeText(LoginActivity.this, "There is a problem in Sign iN", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(SignUpActivity.this, "There is a problem in Sign iN", Toast.LENGTH_SHORT).show();
                         }
 
 

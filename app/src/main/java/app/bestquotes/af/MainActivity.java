@@ -7,6 +7,8 @@ import com.google.android.material.snackbar.Snackbar;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.View;
 import android.view.Menu;
@@ -14,12 +16,38 @@ import android.view.MenuItem;
 
 public class MainActivity extends AppCompatActivity {
 
+
+    RecyclerView rvQuotes;
+    LinearLayoutManager layoutManager;
+
+
+    String names[]={"Ibraham Linkon","Martin Luthr king","Elvis Presely","Bill Gates","Warren Buffet"};
+
+    int photo[]={R.mipmap.ic_launcher_round,R.mipmap.ic_launcher_round,R.mipmap.ic_launcher_round,R.mipmap.ic_launcher_round,R.mipmap.ic_launcher_round};
+
+    String quotes[]={"Health is better than money","Everyone is equal in a society","Music is the thing for mind"," sdfasdfa","Money Money"};
+
+
+    QuotesAdapter quotesAdapter;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
+
+        rvQuotes=findViewById(R.id.rvQuotes);
+
+
+        layoutManager=new LinearLayoutManager(MainActivity.this,LinearLayoutManager.VERTICAL,false);
+        rvQuotes.setLayoutManager(layoutManager);
+        quotesAdapter=new QuotesAdapter(names,quotes,photo,MainActivity.this);
+
+        rvQuotes.setAdapter(quotesAdapter);
+
 
         FloatingActionButton fab = findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
