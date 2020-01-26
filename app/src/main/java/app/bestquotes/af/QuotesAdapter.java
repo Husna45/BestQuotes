@@ -10,6 +10,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
+import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
 public class QuotesAdapter extends RecyclerView.Adapter<QuotesAdapter.quotesItemViewHolder> {
@@ -45,33 +46,22 @@ public class QuotesAdapter extends RecyclerView.Adapter<QuotesAdapter.quotesItem
         holder.tvName.setText(names[position]);
         holder.ivPhoto.setImageResource(photos[position]);
 
-        holder.ivPhoto.setOnClickListener(new View.OnClickListener() {
+        holder.cwItem.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
-                switch (position){
+                Intent intent=new Intent(context,GeneralViewActivity.class);
 
-                    case 1:
-                        Intent intent=new Intent(context,SignUpActivity.class);
-                        context.startActivity(intent);
+                intent.putExtra("name",names[position]);
+                intent.putExtra("photo",photos[position]);
+                intent.putExtra("quote",quotes[position]);
 
-                        break;
-                    case 2:
-                        Intent intent2=new Intent(context,Main2Activity.class);
-                        context.startActivity(intent2);
-                        break;
-
-                    case 3:
-                        Toast.makeText(context, "This is Third Item", Toast.LENGTH_SHORT).show();
-
-                        break;
-
-                }
-
-
-
+                intent.putExtra("position",position);
+                context.startActivity(intent);
             }
         });
+
+
 
 
     }
@@ -87,10 +77,13 @@ public class QuotesAdapter extends RecyclerView.Adapter<QuotesAdapter.quotesItem
         TextView tvName;
         TextView tvQuote;
 
+        CardView cwItem;
 
         public quotesItemViewHolder(@NonNull View itemView) {
             super(itemView);
 
+
+            cwItem=itemView.findViewById(R.id.cwItem);
             ivPhoto=itemView.findViewById(R.id.ivPhoto);
             tvName=itemView.findViewById(R.id.tvName);
             tvQuote=itemView.findViewById(R.id.tvQuote);

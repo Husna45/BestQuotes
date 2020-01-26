@@ -7,6 +7,7 @@ import com.google.android.material.snackbar.Snackbar;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -19,6 +20,7 @@ public class MainActivity extends AppCompatActivity {
 
     RecyclerView rvQuotes;
     LinearLayoutManager layoutManager;
+    RecyclerView.LayoutManager manager;
 
 
     String names[]={"Ibraham Linkon","Martin Luthr king","Elvis Presely","Bill Gates","Warren Buffet"};
@@ -42,8 +44,10 @@ public class MainActivity extends AppCompatActivity {
         rvQuotes=findViewById(R.id.rvQuotes);
 
 
-        layoutManager=new LinearLayoutManager(MainActivity.this,LinearLayoutManager.VERTICAL,false);
-        rvQuotes.setLayoutManager(layoutManager);
+        manager=new GridLayoutManager(MainActivity.this,2);
+
+//        layoutManager=new LinearLayoutManager(MainActivity.this,LinearLayoutManager.VERTICAL,false);
+        rvQuotes.setLayoutManager(manager);
         quotesAdapter=new QuotesAdapter(names,quotes,photo,MainActivity.this);
 
         rvQuotes.setAdapter(quotesAdapter);
