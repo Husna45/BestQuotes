@@ -3,4 +3,5 @@
     <string name="action_settings">Settings</string>
 
     <string name="text1">Neymar is the best player</string>
+    <string name="title_activity_dialog1">DialogActivity1</string>
 </resources>

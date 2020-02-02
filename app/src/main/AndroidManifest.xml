@@ -12,7 +12,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".GeneralViewActivity"></activity>
+        <activity
+            android:name=".DialogActivity1"
+            android:label="@string/title_activity_dialog1"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
+        <activity android:name=".GeneralViewActivity" />
         <activity
             android:name=".Main2Activity"
             android:theme="@style/AppTheme.NoActionBar" />

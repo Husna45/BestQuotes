@@ -2,7 +2,9 @@ package app.bestquotes.af;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -37,29 +39,29 @@ public class GeneralViewActivity extends AppCompatActivity {
 
         if (getIntent().getStringExtra("name")!=null){
 
-
             photoId=getIntent().getIntExtra("photo",0);
-
             name=getIntent().getStringExtra("name");
-
             quote=getIntent().getStringExtra("quote");
 
             position=getIntent().getIntExtra("position",0);
-
-
         }
-
 
         ivPhot.setImageResource(photoId);
         tvName.setText(name);
         tvQuotes.setText(names[position]);
 
 
+        ivPhot.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent=new Intent(GeneralViewActivity.this,DialogActivity1.class);
+                startActivity(intent);
 
-
-
-
-
+            }
+        });
 
     }
+
+
+
 }
